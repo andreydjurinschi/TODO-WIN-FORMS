@@ -39,6 +39,20 @@ public class TaskService
         return tasks;
     }
 
+    private void addTask(models.Task task)
+    {
+        using (var connection = new NpgsqlConnection(_connectionString)) 
+        {
+            connection.Open();
+            var query = "Insert into tasks (title, description, isCompleted) values (@title, @description, @isCompleted)";
+            var cmd = new NpgsqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@title", task.Title);
+            cmd.Parameters.AddWithValue("@description", task.Desctiprion);
+            cmd.Parameters.AddWithValue("@isCompleted", task.isCompleted);
+            cmd.ExecuteNonQuery();
+        }
+    }
+
     /***
      * Get task Count
      */

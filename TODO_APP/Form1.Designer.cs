@@ -32,6 +32,7 @@ partial class Form1
         taskListView = new System.Windows.Forms.ListView();
         countLBL = new System.Windows.Forms.Label();
         completedTaasksLabel = new System.Windows.Forms.Label();
+        newTaskFormBTN = new System.Windows.Forms.Button();
         SuspendLayout();
         // 
         // taskListView
@@ -55,11 +56,20 @@ partial class Form1
         // completedTaasksLabel
         // 
         completedTaasksLabel.Font = new System.Drawing.Font("Segoe UI", 8F);
-        completedTaasksLabel.Location = new System.Drawing.Point(132, 491);
+        completedTaasksLabel.Location = new System.Drawing.Point(128, 490);
         completedTaasksLabel.Name = "completedTaasksLabel";
         completedTaasksLabel.Size = new System.Drawing.Size(500, 19);
         completedTaasksLabel.TabIndex = 2;
         completedTaasksLabel.Text = "label1";
+        // 
+        // newTaskFormBTN
+        // 
+        newTaskFormBTN.Location = new System.Drawing.Point(608, 473);
+        newTaskFormBTN.Name = "newTaskFormBTN";
+        newTaskFormBTN.Size = new System.Drawing.Size(149, 50);
+        newTaskFormBTN.TabIndex = 3;
+        newTaskFormBTN.Text = "Add new Task";
+        newTaskFormBTN.UseVisualStyleBackColor = true;
         // 
         // Form1
         // 
@@ -67,12 +77,15 @@ partial class Form1
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         BackColor = System.Drawing.SystemColors.Control;
         ClientSize = new System.Drawing.Size(895, 689);
+        Controls.Add(newTaskFormBTN);
         Controls.Add(completedTaasksLabel);
         Controls.Add(countLBL);
         Controls.Add(taskListView);
         Location = new System.Drawing.Point(19, 19);
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.Button newTaskFormBTN;
 
     private System.Windows.Forms.Label completedTaasksLabel;
 
