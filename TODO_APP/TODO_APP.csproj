@@ -12,4 +12,10 @@
       <PackageReference Include="Npgsql" Version="9.0.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Update="AddTaskForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+    </ItemGroup>
+
 </Project>

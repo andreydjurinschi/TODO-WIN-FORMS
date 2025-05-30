@@ -13,12 +13,13 @@ public partial class Form1 : Form
         _taskService = new TaskService(connectionString);
         LoadTasks();
         GetTaskCount();
+        GetCompletedTasks();
     }
 
     private void LoadTasks()
     {
+        ConfigureListView();
         var tasks = _taskService.GetTasks();
-        taskListView.Items.Clear();
         foreach (var task in tasks)
         {
             var item = new ListViewItem(task.Title);
@@ -31,11 +32,25 @@ public partial class Form1 : Form
     private void GetTaskCount()
     {
         int count =  _taskService.GetTaskCount();
-        countLBL.Text = $"({count.ToString()})";
+        countLBL.Text = $"Task count: {count.ToString()}";
     }
 
-    private void textBox1_TextChanged(object sender, EventArgs e)
+    private void GetCompletedTasks()
     {
-        throw new System.NotImplementedException();
+        int count = _taskService.GetCompletedTasks();
+        completedTaasksLabel.Text = $"Completed tasks: {count.ToString()}";
     }
+    
+    private void ConfigureListView()
+    {
+        taskListView.View = View.Details;
+        taskListView.FullRowSelect = true;
+        taskListView.GridLines = true;
+
+        taskListView.Columns.Clear(); 
+        taskListView.Columns.Add("Title", 200);
+        taskListView.Columns.Add("Content", 300);
+        taskListView.Columns.Add("Is completed", 100);
+    }
+    
 }

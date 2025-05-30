@@ -31,6 +31,7 @@ partial class Form1
     {
         taskListView = new System.Windows.Forms.ListView();
         countLBL = new System.Windows.Forms.Label();
+        completedTaasksLabel = new System.Windows.Forms.Label();
         SuspendLayout();
         // 
         // taskListView
@@ -41,18 +42,24 @@ partial class Form1
         taskListView.TabIndex = 0;
         taskListView.UseCompatibleStateImageBehavior = false;
         taskListView.View = System.Windows.Forms.View.Details;
-        taskListView.Columns.Add("TaskName", 150, HorizontalAlignment.Center);
-        taskListView.Columns.Add("Description", 300, HorizontalAlignment.Center);
-        taskListView.Columns.Add("IsCompleted", 150, HorizontalAlignment.Center);
         // 
         // countLBL
         // 
-        countLBL.Font = new System.Drawing.Font("Segoe UI", 15F);
-        countLBL.Location = new System.Drawing.Point(377, 38);
+        countLBL.Font = new System.Drawing.Font("Segoe UI", 8F);
+        countLBL.Location = new System.Drawing.Point(128, 460);
         countLBL.Name = "countLBL";
-        countLBL.Size = new System.Drawing.Size(155, 47);
+        countLBL.Size = new System.Drawing.Size(73, 19);
         countLBL.TabIndex = 1;
         countLBL.Text = "label1";
+        // 
+        // completedTaasksLabel
+        // 
+        completedTaasksLabel.Font = new System.Drawing.Font("Segoe UI", 8F);
+        completedTaasksLabel.Location = new System.Drawing.Point(132, 491);
+        completedTaasksLabel.Name = "completedTaasksLabel";
+        completedTaasksLabel.Size = new System.Drawing.Size(500, 19);
+        completedTaasksLabel.TabIndex = 2;
+        completedTaasksLabel.Text = "label1";
         // 
         // Form1
         // 
@@ -60,11 +67,14 @@ partial class Form1
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         BackColor = System.Drawing.SystemColors.Control;
         ClientSize = new System.Drawing.Size(895, 689);
+        Controls.Add(completedTaasksLabel);
         Controls.Add(countLBL);
         Controls.Add(taskListView);
         Location = new System.Drawing.Point(19, 19);
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.Label completedTaasksLabel;
 
     private System.Windows.Forms.Label countLBL;
 
