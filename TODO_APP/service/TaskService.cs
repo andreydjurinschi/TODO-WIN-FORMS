@@ -38,18 +38,52 @@ public class TaskService
         }
         return tasks;
     }
+    
+    /***
+     * Update task
+     */
 
-    private void addTask(models.Task task)
+    /*public int updateTask(int id, models.Task newTask)
+    {
+        using (var connection = new NpgsqlConnection(_connectionString))
+        {
+            connection.Open();
+            var query = "update tasks set title = @title, description = @description where id = @id)";
+            var cmd = new NpgsqlCommand(query, connection);
+            
+            cmd.Parameters.AddWithValue("@title", newTask.Title);
+            cmd.Parameters.AddWithValue("@description", newTask.Desctiprion);
+            cmd.Parameters.AddWithValue("@id", id);
+            return cmd.ExecuteNonQuery();
+        }
+    }*/
+
+    public int completeTask(int taskId)
+    {
+        using (var connection = new NpgsqlConnection(_connectionString))
+        {
+            connection.Open();
+            var query = "UPDATE tasks SET isCompleted = true WHERE taskId = @taskId";
+            var cmd = new NpgsqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("taskId", taskId);
+            return cmd.ExecuteNonQuery();
+        }
+    }
+
+    /***
+     * Create Task
+     */
+    public int AddTask(models.Task task)
     {
         using (var connection = new NpgsqlConnection(_connectionString)) 
         {
             connection.Open();
-            var query = "Insert into tasks (title, description, isCompleted) values (@title, @description, @isCompleted)";
+            var query = "Insert into tasks (title, description, is_completed) values (@title, @description, @is_completed)";
             var cmd = new NpgsqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@title", task.Title);
             cmd.Parameters.AddWithValue("@description", task.Desctiprion);
-            cmd.Parameters.AddWithValue("@isCompleted", task.isCompleted);
-            cmd.ExecuteNonQuery();
+            cmd.Parameters.AddWithValue("@is_completed", task.isCompleted);
+            return cmd.ExecuteNonQuery();
         }
     }
 
@@ -78,6 +112,9 @@ public class TaskService
         }
         return tasks.Count;
     }
+    /**+
+     * Get completed tasks
+     */
     public int GetCompletedTasks()
     {
         var tasks = new List<models.Task>();

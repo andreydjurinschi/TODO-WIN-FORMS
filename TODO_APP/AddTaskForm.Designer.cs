@@ -31,28 +31,29 @@ partial class AddTaskForm
     /// </summary>
     private void InitializeComponent()
     {
-        textBox1 = new System.Windows.Forms.TextBox();
-        textBox2 = new System.Windows.Forms.TextBox();
+        titleTextBox = new System.Windows.Forms.TextBox();
+        DescriptionTextBox = new System.Windows.Forms.TextBox();
         label1 = new System.Windows.Forms.Label();
         label2 = new System.Windows.Forms.Label();
         label3 = new System.Windows.Forms.Label();
         saveButton = new System.Windows.Forms.Button();
+        gobackBTN = new System.Windows.Forms.Button();
         SuspendLayout();
         // 
-        // textBox1
+        // titleTextBox
         // 
-        textBox1.Location = new System.Drawing.Point(106, 139);
-        textBox1.Name = "textBox1";
-        textBox1.Size = new System.Drawing.Size(584, 27);
-        textBox1.TabIndex = 0;
+        titleTextBox.Location = new System.Drawing.Point(106, 139);
+        titleTextBox.Name = "titleTextBox";
+        titleTextBox.Size = new System.Drawing.Size(584, 27);
+        titleTextBox.TabIndex = 0;
         // 
-        // textBox2
+        // DescriptionTextBox
         // 
-        textBox2.Location = new System.Drawing.Point(106, 217);
-        textBox2.Multiline = true;
-        textBox2.Name = "textBox2";
-        textBox2.Size = new System.Drawing.Size(584, 91);
-        textBox2.TabIndex = 1;
+        DescriptionTextBox.Location = new System.Drawing.Point(106, 217);
+        DescriptionTextBox.Multiline = true;
+        DescriptionTextBox.Name = "DescriptionTextBox";
+        DescriptionTextBox.Size = new System.Drawing.Size(584, 91);
+        DescriptionTextBox.TabIndex = 1;
         // 
         // label1
         // 
@@ -71,7 +72,6 @@ partial class AddTaskForm
         label2.Size = new System.Drawing.Size(59, 26);
         label2.TabIndex = 3;
         label2.Text = "Title:";
-        label2.Click += label2_Click_1;
         // 
         // label3
         // 
@@ -90,22 +90,36 @@ partial class AddTaskForm
         saveButton.TabIndex = 5;
         saveButton.Text = "SAVE";
         saveButton.UseVisualStyleBackColor = true;
+        saveButton.Click += saveButton_Click;
+        // 
+        // gobackBTN
+        // 
+        gobackBTN.Location = new System.Drawing.Point(525, 388);
+        gobackBTN.Name = "gobackBTN";
+        gobackBTN.Size = new System.Drawing.Size(165, 41);
+        gobackBTN.TabIndex = 6;
+        gobackBTN.Text = "SAVE";
+        gobackBTN.UseVisualStyleBackColor = true;
+        gobackBTN.Click += gobackBTN_Click;
         // 
         // AddTaskForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(800, 450);
+        Controls.Add(gobackBTN);
         Controls.Add(saveButton);
         Controls.Add(label3);
         Controls.Add(label2);
         Controls.Add(label1);
-        Controls.Add(textBox2);
-        Controls.Add(textBox1);
+        Controls.Add(DescriptionTextBox);
+        Controls.Add(titleTextBox);
         Text = "AddTaskForm";
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.Button gobackBTN;
 
     private System.Windows.Forms.Button saveButton;
 
@@ -115,8 +129,8 @@ partial class AddTaskForm
 
     private System.Windows.Forms.Label label1;
 
-    private System.Windows.Forms.TextBox textBox1;
-    private System.Windows.Forms.TextBox textBox2;
+    private System.Windows.Forms.TextBox titleTextBox;
+    private System.Windows.Forms.TextBox DescriptionTextBox;
 
     #endregion
 }

@@ -8,8 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6933d47e-3f4f-48a7-8a96-3c0c9e256987" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TODO_APP.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TODO_APP.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0-windows/TODO_APP.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0-windows/TODO_APP.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0-windows/TODO_APP.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0-windows/TODO_APP.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,10 +21,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2xozDyrHialL8qqyKHqqxm3czJa" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -33,6 +35,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,7 +72,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1748619099747</updated>
-      <workItem from="1748619101871" duration="1080000" />
+      <workItem from="1748619101871" duration="1576000" />
+      <workItem from="1748692575102" duration="132000" />
     </task>
     <servers />
   </component>

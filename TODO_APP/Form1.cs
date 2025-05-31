@@ -9,7 +9,6 @@ public partial class Form1 : Form
     {
         InitializeComponent();
         string connectionString = "Host=localhost;Port=5433;Username=user;Password=pass;Database=todo_db";
-
         _taskService = new TaskService(connectionString);
         LoadTasks();
         GetTaskCount();
@@ -52,5 +51,15 @@ public partial class Form1 : Form
         taskListView.Columns.Add("Content", 300);
         taskListView.Columns.Add("Is completed", 100);
     }
-    
+    private void newTaskFormBTN_Click_1(object sender, EventArgs e)
+    {
+        var addTaskForm = new AddTaskForm();
+        Hide();
+        addTaskForm.ShowDialog();
+    }
+
+    private void ConfigureDataGrid()
+    {
+        
+    }
 }
