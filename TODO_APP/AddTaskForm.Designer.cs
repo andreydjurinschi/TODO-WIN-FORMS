@@ -98,7 +98,7 @@ partial class AddTaskForm
         gobackBTN.Name = "gobackBTN";
         gobackBTN.Size = new System.Drawing.Size(165, 41);
         gobackBTN.TabIndex = 6;
-        gobackBTN.Text = "SAVE";
+        gobackBTN.Text = "Back";
         gobackBTN.UseVisualStyleBackColor = true;
         gobackBTN.Click += gobackBTN_Click;
         // 

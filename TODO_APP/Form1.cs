@@ -24,24 +24,28 @@ public partial class Form1 : Form
             var item = new ListViewItem(task.Title);
             item.SubItems.Add(task.Desctiprion);
             item.SubItems.Add(task.isCompleted ? "Yes" : "No");
+            item.Tag = task.Id;
             taskListView.Items.Add(item);
         }
     }
 
     private void GetTaskCount()
     {
+        ConfigureListView();
         int count =  _taskService.GetTaskCount();
         countLBL.Text = $"Task count: {count.ToString()}";
     }
 
     private void GetCompletedTasks()
     {
+        ConfigureListView();
         int count = _taskService.GetCompletedTasks();
         completedTaasksLabel.Text = $"Completed tasks: {count.ToString()}";
     }
     
     private void ConfigureListView()
     {
+        taskListView.Columns.Clear(); 
         taskListView.View = View.Details;
         taskListView.FullRowSelect = true;
         taskListView.GridLines = true;
@@ -58,8 +62,24 @@ public partial class Form1 : Form
         addTaskForm.ShowDialog();
     }
 
-    private void ConfigureDataGrid()
+    private void editBTN_Click(object sender, EventArgs e)
     {
-        
+        if (taskListView.SelectedItems.Count == 0)
+        {
+            MessageBox.Show("Please select a task to edit.");
+            return;
+        }
+
+        var selected = taskListView.SelectedItems[0];
+        var id = (int) selected.Tag!;
+        var result = _taskService.CompleteTask(id);
+        if (result > 0)
+        {
+            MessageBox.Show("Task completed successfully");
+            taskListView.Clear();
+            LoadTasks();
+            return;
+        }
+        MessageBox.Show("Unrecognized error");
     }
 }

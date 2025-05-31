@@ -58,14 +58,14 @@ public class TaskService
         }
     }*/
 
-    public int completeTask(int taskId)
+    public int CompleteTask(int Id)
     {
         using (var connection = new NpgsqlConnection(_connectionString))
         {
             connection.Open();
-            var query = "UPDATE tasks SET isCompleted = true WHERE taskId = @taskId";
+            var query = "UPDATE tasks SET is_completed = true WHERE Id = @Id";
             var cmd = new NpgsqlCommand(query, connection);
-            cmd.Parameters.AddWithValue("taskId", taskId);
+            cmd.Parameters.AddWithValue("Id",Id);
             return cmd.ExecuteNonQuery();
         }
     }

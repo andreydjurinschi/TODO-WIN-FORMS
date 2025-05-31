@@ -33,8 +33,7 @@ partial class Form1
         countLBL = new System.Windows.Forms.Label();
         completedTaasksLabel = new System.Windows.Forms.Label();
         newTaskFormBTN = new System.Windows.Forms.Button();
-        dataGridView1 = new System.Windows.Forms.DataGridView();
-        ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+        editBTN = new System.Windows.Forms.Button();
         SuspendLayout();
         // 
         // taskListView
@@ -74,16 +73,15 @@ partial class Form1
         newTaskFormBTN.UseVisualStyleBackColor = true;
         newTaskFormBTN.Click += newTaskFormBTN_Click_1;
         // 
-        // dataGridView1
+        // editBTN
         // 
-        dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridView1.Location = new System.Drawing.Point(128, 535);
-        dataGridView1.Name = "dataGridView1";
-        dataGridView1.RowHeadersWidth = 51;
-        dataGridView1.Size = new System.Drawing.Size(629, 150);
-        dataGridView1.TabIndex = 4;
-        dataGridView1.Text = "dataGridView1";
-        dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+        editBTN.Location = new System.Drawing.Point(608, 539);
+        editBTN.Name = "editBTN";
+        editBTN.Size = new System.Drawing.Size(149, 50);
+        editBTN.TabIndex = 4;
+        editBTN.Text = "Mark as done";
+        editBTN.UseVisualStyleBackColor = true;
+        editBTN.Click += editBTN_Click;
         // 
         // Form1
         // 
@@ -91,15 +89,16 @@ partial class Form1
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         BackColor = System.Drawing.SystemColors.Control;
         ClientSize = new System.Drawing.Size(895, 689);
-        Controls.Add(dataGridView1);
+        Controls.Add(editBTN);
         Controls.Add(newTaskFormBTN);
         Controls.Add(completedTaasksLabel);
         Controls.Add(countLBL);
         Controls.Add(taskListView);
         Location = new System.Drawing.Point(19, 19);
-        ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.Button editBTN;
 
     private System.Windows.Forms.DataGridView dataGridView1;
 
